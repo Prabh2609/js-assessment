@@ -3,6 +3,10 @@ var playlist;
 var title;
 var url;
 var videos;
+var desc;
+var heading;
+var videoId;
+var pos;
 $.get("https://5d76bf96515d1a0014085cf9.mockapi.io/playlist",function(data,status){
     playlist=data;
     console.log(playlist);
@@ -26,9 +30,21 @@ $.get("https://5d76bf96515d1a0014085cf9.mockapi.io/playlist",function(data,statu
         {
             if(playlist[i].title==title)
             {
-                console.log(i);
+                pos=i;        
             }
         }
+        videoId=videos[pos].vimeoId;
+        // desc=videos[pos].description;
+        // heading=videos[pos].title;
+        // console.log("HEADING : "+heading);
+        // console.log("DESCRIPTION :"+desc);
+        // console.log(document.getElementById("video-title").innerHTML)
+        console.log(videos[pos].description);
+        console.log("videoID : "+videoId);
+        console.log("https://player.vimeo.com/video/"+videoId);
+        video.attr("src","https://player.vimeo.com/video/"+videoId);
+        // $("#video-title").html(videos[2].title)
+        
     })
 })
 
