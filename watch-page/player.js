@@ -33,6 +33,12 @@ $.get("https://5d76bf96515d1a0014085cf9.mockapi.io/playlist",function(data,statu
                 pos=i;        
             }
         }
+        heading=videos[pos].title;
+        desc=videos[pos].description;
+        console.log("DESCRIPTION :"+desc);
+        console.log("HEADING : "+heading);
+        $("#video-title").html(heading);
+        $("#video-description").html(desc);
         videoId=videos[pos].vimeoId;
         // desc=videos[pos].description;
         // heading=videos[pos].title;
